@@ -19,33 +19,62 @@ html {
 
 body {
   margin-bottom: 60px;
+  box-sizing: border-box;
 }
 
+.container-board {
+  border: 3px solid lightgray;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+}
+
+.content {
+  padding: 35px;
+  background-color: #14bdac;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .board {
-  width: 300px; 
+  width: 300px;
   height: 300px;
+  table-layout: fixed;
 }
-
+td {
+  height: 100px;
+}
+.a {
+  display: block;
+  /*height:100px;*/
+}
 .top-cell {
-  border-bottom: 2px solid;
+  border-bottom: 5px solid gray;
 }
 
 .middle-cell {
-  border-bottom: 2px solid;
+  border-bottom: 5px solid gray;
 }
 
 #cell-2 {
-  border-left: 2px solid;
-  border-right: 2px solid;
+  border-left: 5px solid gray;
+  border-right: 5px solid gray;
 }
 
 #cell-5 {
   
-  border-left: 2px solid;
-  border-right: 2px solid;
+  border-left: 5px solid gray;
+  border-right: 5px solid gray;
 }
 #cell-8 {
 
-  border-left: 2px solid;
-  border-right: 2px solid;
+  border-left: 5px solid gray;
+  border-right: 5px solid gray;
 }

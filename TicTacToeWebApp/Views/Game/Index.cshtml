@@ -1,25 +1,28 @@
 ﻿<h1>Game Page</h1>
 
-<div class="container">
-    <div class="heading">
-                
+<div class="container-board">
+    <div class="header">
+        <div>X</div>
+        <div>O</div>
     </div> 
     <div class="content">
         <table class="board">
             <tr class="top-row"></tr>
-                <td class="top-cell"  id="cell-1">1</td>
-                <td class="top-cell" id="cell-2">2</td>
-                <td class="top-cell" id="cell-3">3</td>
+                <td class="top-cell"  id="cell-1"><a asp-action="ChooseCell"></a></td>
+                <td class="top-cell" id="cell-2"><a></a></td>
+                <td class="top-cell" id="cell-3"><a></a></td>
             <tr class="middle-row"></tr>
-                <td class="middle-cell" id="cell-4">4</td>
-                <td class="middle-cell" id="cell-5">5</td>
-                <td class="middle-cell" id="cell-6">6</td>
+                <td class="middle-cell" id="cell-4"><a></a></td>
+                <td class="middle-cell" id="cell-5"><a></a></td>
+                <td class="middle-cell" id="cell-6"><a></a></td>
             <tr class="bottom-row"></tr>
-                <td class="bottom-cell" id="cell-7">7</td>
-                <td class="bottom-cell" id="cell-8">8</td>
-                <td class="bottom-cell" id="cell-9">9</td>
+                <td class="bottom-cell" id="cell-7"><a></a></td>
+                <td class="bottom-cell" id="cell-8"><a></a></td>
+                <td class="bottom-cell" id="cell-9"><a></a></td>
         </table>
         
     </div>
-    <div class="footer"></div>
+    <div class="footer">
+       <div>Restart game</div> 
+    </div>
 </div>
