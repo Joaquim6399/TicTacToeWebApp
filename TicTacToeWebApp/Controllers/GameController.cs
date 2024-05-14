@@ -41,6 +41,15 @@ public class GameController : Controller
         return RedirectToAction("Index");
     }
 
+    public IActionResult RestartGame()
+    {
+        Board board = new Board();
+        var boardJson = JsonConvert.SerializeObject(board);
+        HttpContext.Session.SetString("Board", boardJson);
+        
+        return RedirectToAction("Index");
+         
+    }
     private Board GetBoardFromSession()
     {
         var boardJson = HttpContext.Session.GetString("Board");
@@ -56,18 +65,4 @@ public class GameController : Controller
         var boardJson = JsonConvert.SerializeObject(board);
         HttpContext.Session.SetString("Board", boardJson);
     }
-    // private Board GetWhosPlayingFromSession()
-    // {
-    //     var playerJson = HttpContext.Session.GetString("Player");
-    //     if (string.IsNullOrEmpty(playerJson))
-    //     {
-    //         return new Board();
-    //     }
-    //     return JsonConvert.DeserializeObject<string>(playerJson);
-    // }
-    // private void SaveWhosPlayingToSession(string player)
-    // {
-    //     var playerJson = JsonConvert.SerializeObject(player);
-    //     HttpContext.Session.SetString("Player", playerJson);
-    // }
 }
