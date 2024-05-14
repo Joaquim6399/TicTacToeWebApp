@@ -18,7 +18,18 @@ public class GameController : Controller
         Board board = GetBoardFromSession();
         int x = (id - 1) / 3;
         int y = (id - 1) % 3;
-        board.BoardGrid[x, y] = "X";
+
+        if (board.IsPlayerX)
+        {
+            board.BoardGrid[x, y] = "X";
+            board.IsPlayerX = false;
+        }
+        else
+        {
+            board.BoardGrid[x, y] = "O";
+            board.IsPlayerX = true;
+            
+        }
         SaveBoardToSession(board);
         
         return RedirectToAction("Index");
@@ -39,4 +50,18 @@ public class GameController : Controller
         var boardJson = JsonConvert.SerializeObject(board);
         HttpContext.Session.SetString("Board", boardJson);
     }
+    // private Board GetWhosPlayingFromSession()
+    // {
+    //     var playerJson = HttpContext.Session.GetString("Player");
+    //     if (string.IsNullOrEmpty(playerJson))
+    //     {
+    //         return new Board();
+    //     }
+    //     return JsonConvert.DeserializeObject<string>(playerJson);
+    // }
+    // private void SaveWhosPlayingToSession(string player)
+    // {
+    //     var playerJson = JsonConvert.SerializeObject(player);
+    //     HttpContext.Session.SetString("Player", playerJson);
+    // }
 }

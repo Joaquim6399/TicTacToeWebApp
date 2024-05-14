@@ -4,7 +4,8 @@ public class Board
 {
     //Create a 3 x 3 grid
      public string[,] BoardGrid {get; set;}
-   
+
+     public bool IsPlayerX = true;
      //Constructor
      public Board() => BoardGrid = new string [3, 3] ;
    
