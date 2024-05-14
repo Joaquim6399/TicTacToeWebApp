@@ -6,6 +6,8 @@ public class Board
      public string[,] BoardGrid {get; set;}
 
      public bool IsPlayerX = true;
+
+     public bool IsThereWinner = false;
      //Constructor
      public Board() => BoardGrid = new string [3, 3] ;
    

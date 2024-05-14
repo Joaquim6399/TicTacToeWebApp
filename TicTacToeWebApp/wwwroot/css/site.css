@@ -34,6 +34,8 @@ body {
 .footer {
   display: flex;
   justify-content: center;
+  flex-direction: column;
+  text-align: center;
 }
 
 .content {
@@ -42,6 +44,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  
 }
 .board {
   width: 300px;

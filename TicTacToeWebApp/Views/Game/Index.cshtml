@@ -34,6 +34,12 @@
         
     </div>
     <div class="footer">
-       <div>Restart game</div> 
+        <div>Restart game</div> 
+        <div>@{
+                 if (Model.hasPlayerWon())
+                 {
+                     <p>We have a winner!</p>
+                 }
+             }</div>
     </div>
 </div>

@@ -30,7 +30,13 @@ public class GameController : Controller
             board.IsPlayerX = true;
             
         }
+
+        if (board.hasPlayerWon())
+            board.IsThereWinner = true;
+        
         SaveBoardToSession(board);
+        
+         
         
         return RedirectToAction("Index");
     }
