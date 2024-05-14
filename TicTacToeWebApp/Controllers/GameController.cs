@@ -16,7 +16,9 @@ public class GameController : Controller
     public IActionResult ChooseCell(int id)
     {
         Board board = GetBoardFromSession();
-        board.BoardGrid[0, 0] = "X";
+        int x = (id - 1) / 3;
+        int y = (id - 1) % 3;
+        board.BoardGrid[x, y] = "X";
         SaveBoardToSession(board);
         
         return RedirectToAction("Index");

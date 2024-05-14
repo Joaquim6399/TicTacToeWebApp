@@ -13,20 +13,23 @@
             @{
                 for (int i = 0; i < 3; i++)
                 {
-                    <td class="top-cell"  id="cell-@(i+1)"><a class="clickable" asp-action="ChooseCell" asp-route-id="1">@Model.BoardGrid[0, i]</a></td>
+                    <td class="top-cell"  id="cell-@(i+1)"><a class="clickable" asp-action="ChooseCell" asp-route-id="@(i+1)">@Model.BoardGrid[0, i]</a></td>
                 }
             }
-                @* <td class="top-cell"  id="cell-1"><a asp-action="ChooseCell" asp-route-id="1">1</a></td> *@
-                @* <td class="top-cell" id="cell-2"><a></a></td> *@
-                @* <td class="top-cell" id="cell-3"><a></a></td> *@
             <tr class="middle-row"></tr>
-                <td class="middle-cell" id="cell-4"><a></a></td>
-                <td class="middle-cell" id="cell-5"><a></a></td>
-                <td class="middle-cell" id="cell-6"><a></a></td>
+                @{
+                    for (int i = 0; i < 3; i++)
+                    {
+                        <td class="middle-cell"  id="cell-@(i+4)"><a class="clickable" asp-action="ChooseCell" asp-route-id="@(i+4)">@Model.BoardGrid[1, i]</a></td>
+                    }
+                }
             <tr class="bottom-row"></tr>
-                <td class="bottom-cell" id="cell-7"><a></a></td>
-                <td class="bottom-cell" id="cell-8"><a></a></td>
-                <td class="bottom-cell" id="cell-9"><a></a></td>
+                @{
+                    for (int i = 0; i < 3; i++)
+                    {
+                        <td class="bottom-cell"  id="cell-@(i+7)"><a class="clickable" asp-action="ChooseCell" asp-route-id="@(i+7)">@Model.BoardGrid[2, i]</a></td>
+                    }
+                }
         </table>
         
     </div>
