@@ -4,8 +4,16 @@
 
 <div class="container-board">
     <div class="header">
-        <div>X</div>
-        <div>O</div>
+        @{
+            if (Model.IsPlayerX)
+            {
+                <div>Player X turn</div>
+            }
+            else
+            {
+                <div>Player O turn</div>
+            }
+        }
     </div> 
     <div class="content">
         <table class="board">
