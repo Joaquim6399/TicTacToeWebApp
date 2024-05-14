@@ -21,21 +21,46 @@
             @{
                 for (int i = 0; i < 3; i++)
                 {
-                    <td class="top-cell"  id="cell-@(i+1)"><a class="clickable" asp-action="ChooseCell" asp-route-id="@(i+1)">@Model.BoardGrid[0, i]</a></td>
+                    if (!Model.hasPlayerWon())
+                    {
+                        <td class="top-cell"  id="cell-@(i+1)"><a class="clickable" asp-action="ChooseCell" asp-route-id="@(i+1)">@Model.BoardGrid[0, i]</a></td>
+                        
+                    }
+                    else
+                    {
+                        <td class="top-cell"  id="cell-@(i+1)">@Model.BoardGrid[0, i]</td>
+                    }
                 }
             }
             <tr class="middle-row"></tr>
                 @{
                     for (int i = 0; i < 3; i++)
                     {
-                        <td class="middle-cell"  id="cell-@(i+4)"><a class="clickable" asp-action="ChooseCell" asp-route-id="@(i+4)">@Model.BoardGrid[1, i]</a></td>
+                        if (!Model.hasPlayerWon())
+                        {
+                            <td class="middle-cell"  id="cell-@(i+4)"><a class="clickable" asp-action="ChooseCell" asp-route-id="@(i+4)">@Model.BoardGrid[1, i]</a></td>
+                        }
+                        else
+                        {
+                            <td class="middle-cell"  id="cell-@(i+4)">@Model.BoardGrid[1, i]</td>
+                            
+                        }
+                        
                     }
                 }
             <tr class="bottom-row"></tr>
                 @{
                     for (int i = 0; i < 3; i++)
                     {
-                        <td class="bottom-cell"  id="cell-@(i+7)"><a class="clickable" asp-action="ChooseCell" asp-route-id="@(i+7)">@Model.BoardGrid[2, i]</a></td>
+                        if (!Model.hasPlayerWon())
+                        {
+                            <td class="bottom-cell"  id="cell-@(i+7)"><a class="clickable" asp-action="ChooseCell" asp-route-id="@(i+7)">@Model.BoardGrid[2, i]</a></td>
+                        }
+                        else
+                        {
+                            <td class="bottom-cell"  id="cell-@(i+7)">@Model.BoardGrid[2, i]</td>
+                            
+                        }
                     }
                 }
         </table>
